@@ -1,0 +1,20 @@
+@use '../util' as u;
+
+h1 {
+    font-size: u.rem(24);
+    margin-bottom: u.rem(3);
+    font-weight: bold;
+    @include u.breakpoints-up(large) {
+        font-size: u.rem(28);
+    }
+}
+
+h1, h2, h3 {
+    line-height: 1.1;
+}
+
+a,
+a:visited,
+a:active {
+    text-decoration: none;
+}
