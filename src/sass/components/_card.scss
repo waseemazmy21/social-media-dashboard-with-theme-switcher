@@ -1,0 +1,142 @@
+@use '../util' as u;
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(255px, 1fr));
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: u.rem(25);
+    background-color: var(--dark-card);
+    border-radius: u.rem(5);
+    transition: background-color 150ms ease-in-out;
+    cursor: pointer;
+
+    &:hover {
+        background: var(--dark-card-hover);
+    }
+
+    &--grid {
+        text-align: left;
+        display: grid;
+        grid-template-columns: repeat(2, auto);
+        grid-template-rows: repeat(2, auto);
+        justify-content: space-between;
+        row-gap: u.rem(20);
+        
+        .card__count {
+            margin-bottom: 0;
+        }
+    
+        .card__change {
+            align-self: end;
+        }
+    
+        img,
+        .card__change {
+            justify-self: end;
+        }
+    }
+
+    &--facebook {
+        border-top: u.rem(5) solid var(--facebook);
+    }
+
+    &--twitter {
+        border-top: u.rem(5) solid var(--twitter);
+    }
+
+    &--instagram {
+        position: relative;
+        padding-top: u.rem(30);
+        overflow: hidden;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: u.rem(5);
+            width: 100%;
+            background: linear-gradient(
+                225deg,
+                var(--instagram-end),
+                var(--instagram-middle) 50.91%,
+                var(--instagram-start) 100%
+            );
+        }
+    }
+
+    &--youtube {
+        border-top: u.rem(5) solid var(--youtube);
+    }
+
+    &__platform {
+        display: flex;
+        gap: u.rem(8);
+        margin-bottom: u.rem(28);
+        height: u.rem(20);
+    }
+
+    &__username {
+        font-size: u.rem(12);
+        font-weight: 700;
+        color: var(--dark-text1);
+    }
+
+    &__followers {
+        margin-bottom: u.rem(25);
+    }
+
+    &__count {
+        color: var(--light-bg);
+        font-weight: 700;
+        letter-spacing: u.rem(-2);
+        line-height: 1;
+        margin-bottom: u.rem(4);
+
+        &--big {
+            font-size: u.rem(56);
+        }
+
+        &--small {
+            font-size: u.rem(32);
+        }
+    }
+
+    &__label {
+        font-size: u.rem(12);
+        letter-spacing: u.rem(5);
+        font-weight: 400;
+        color: var(--dark-text1);
+        text-transform: uppercase;
+      }
+
+    &__change {
+        display: flex;
+        align-items: center;
+        gap: u.rem(4);
+        font-size: u.rem(12);
+        font-weight: bold;
+        &--up {
+            color: var(--limegreen);
+        }
+    
+        &--down {
+            color: var(--brightred);
+        }
+      
+    }
+
+    &__subtitle {
+        font-size: u.rem(14);
+        font-weight: 700;
+        color: var(--dark-text1);
+    }
+}

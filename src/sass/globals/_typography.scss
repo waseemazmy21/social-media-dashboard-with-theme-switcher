@@ -3,13 +3,23 @@
 h1 {
     font-size: u.rem(24);
     margin-bottom: u.rem(3);
-    font-weight: bold;
+    font-weight: 700;
+
     @include u.breakpoints-up(large) {
         font-size: u.rem(28);
     }
 }
 
-h1, h2, h3 {
+
+h2 {
+    font-size: u.rem(24);
+    margin-bottom: u.rem(24);
+    font-weight: 700;
+}
+
+h1,
+h2,
+h3 {
     line-height: 1.1;
 }
 
