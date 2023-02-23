@@ -1,38 +1,16 @@
 @use '../util' as u;
 
 .toggle {
+    display: flex;
+    gap: u.rem(13);
 
-    display: grid;
-    grid-template-columns: repeat((3, auto));
-    grid-template-rows: repeat(2, auto);
-    gap: u.rem(4.8) u.rem(8);
-
-    label {
+    legend {
         font-size: u.rem(14);
-        align-self: center;
-
-        &[for="dark"] {
-            grid-column: 1/2;
-        }
-
-        &[for="system"] {
-            grid-column: 2/3;
-            grid-row: 2/3;
-
-            align-self: start;
-        }
-
-        &[for="light"] {
-            grid-column: 3/4;
-        }
-
-
     }
 
     &__wrapper {
+        display: flex;
         height: u.rem(24);
-        grid-column: 2/3;
-        grid-row: 1/2;
         position: relative;
     }
 
@@ -40,9 +18,8 @@
         opacity: 0;
         z-index: 2;
         position: relative;
-        height: u.rem(20);
-        width: u.rem(20);
-        margin: 0 -2px 0 -2px;
+        height: u.rem(24);
+        width: u.rem(24);
 
         &:focus ~ .toggle__button {
             border: 2px solid #fff;
@@ -78,9 +55,4 @@
     #light:checked ~ .toggle__button {
         left: calc(100% - 21px);
     } 
-
-    #system:checked ~ .toggle__button {
-        left: 50%;
-        transform: translateX(-50%);
-    }
 }
