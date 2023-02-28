@@ -7,3 +7,4 @@ import './images/icon-twitter.svg';
 import './images/icon-instagram.svg';
 import './images/icon-youtube.svg';
 
+import './mode';

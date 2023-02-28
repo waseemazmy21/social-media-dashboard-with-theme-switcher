@@ -12,7 +12,7 @@
     }
 
     &__title {
-        border-bottom: 1px solid var(--dark-text1);
+        border-bottom: 2px solid var(--text-color2);
         padding-bottom: 1rem;
 
         @include u.breakpoints-up(medium) {
@@ -23,7 +23,7 @@
     &__subtitle {
         font-size: u.rem(14);
         font-weight: bold;
-        color: var(--dark-text1);
+        color: var(--text-color2);
     }
 
     &__toggle {
